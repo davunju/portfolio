@@ -50,13 +50,13 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl"
+            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl overflow-hidden"
           >
             <a href={project.url} target="_blank">
               <img
                 src={project.image}
                 alt={project.alt}
-                className="rounded-t-xl"
+                className="rounded-t-xl object-cover transition-transform duration-300 ease-in-out hover:scale-110"
               />
             </a>
             <div className="p-5">
@@ -72,7 +72,9 @@ export default function Projects() {
               </div>
               <div className="flex items-center justify-center gap-2">
                 {project.tags.map((tag) => (
-                  <p className="text-sm md:text-base">#{tag}</p>
+                  <p className="text-sm md:text-base" key={tag}>
+                    #{tag}
+                  </p>
                 ))}
               </div>
             </div>
