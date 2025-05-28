@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="w-full 2xl:max-w-7xl xl:max-w-6xl lg:max-w-5xl mx-auto my-8 lg:my-16 px-5 text-slate-800 dark:text-white">
       <div className="flex flex-col-reverse items-center lg:flex-row lg:items-stretch justify-between">
-        <article className="max-[769px]:text-center">
+        <article className="max-[769px]:text-center md:text-center lg:text-start">
           <div className="my-5 md:my-10">
             <h1 className="font-bold max-[340px]:text-3xl md:text-6xl sm:text-5xl max-[450px]:text-4xl lg:text-7xl">
               Nice to meet you!
