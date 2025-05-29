@@ -20,9 +20,12 @@ export default function Hero() {
             about building accessible web apps with great user interfaces and
             user experiences.
           </p>
-          <button className="border-b-4 p-2 uppercase border-emerald-700 cursor-pointer font-semibold">
+          <a
+            href="#contact"
+            className="inline-block border-b-4 p-2 uppercase border-emerald-700 cursor-pointer font-semibold hover:bg-emerald-600 hover:ring-2 hover:ring-emerald-700 hover:rounded-xl hover:text-neutral-100 transition ease-in-out delay-150"
+          >
             contact me
-          </button>
+          </a>
         </article>
         <div>
           <img

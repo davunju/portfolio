@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 
 export default function Contact() {
   return (
-    <section className="bg-slate-800 py-16">
+    <section id="contact" className="bg-slate-800 py-16">
       <div className="w-full 2xl:max-w-7xl xl:max-w-6xl lg:max-w-5xl mx-auto px-5 text-white">
         <section className="flex flex-col md:flex-row gap-10 lg:gap-20 items-start">
           <article>
@@ -36,7 +36,7 @@ export default function Contact() {
                 className="w-full border-b-2 border-slate-600 p-3"
               ></textarea>
             </form>
-            <button className="mt-3 cursor-pointer uppercase py-2 border-b-2 border-emerald-700">
+            <button className="mt-3 cursor-pointer uppercase p-2 border-b-4 border-emerald-700 hover:bg-emerald-600 hover:ring-2 hover:ring-emerald-700 hover:rounded-xl hover:text-neutral-100 transition ease-in-out delay-150">
               send message
             </button>
           </div>

@@ -50,15 +50,18 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl overflow-hidden"
+            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl"
           >
-            <a href={project.url} target="_blank">
-              <img
-                src={project.image}
-                alt={project.alt}
-                className="rounded-t-xl object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-              />
-            </a>
+            <div className="overflow-hidden">
+              <a href={project.url} target="_blank">
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className="rounded-t-xl object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                />
+              </a>
+            </div>
+
             <div className="p-5">
               <div className="border-t-2 border-b-2 py-5 border-slate-300 dark:border-slate-700 mb-5">
                 <a href={project.url} target="_blank">
