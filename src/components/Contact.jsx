@@ -20,6 +20,7 @@ export default function Contact() {
       await axios.post("https://contact-backend-l8ez.onrender.com", formData);
       setStatus("Message sent!");
       setFormData({ name: "", email: "", message: "" });
+      console.log(formData);
     } catch (error) {
       setStatus("Failed to send. Try again.");
       console.log(error);
@@ -71,7 +72,7 @@ export default function Contact() {
             </form>
             <button
               type="submit"
-              className="mt-3 cursor-pointer uppercase p-2 border-b-4 border-emerald-700 hover:bg-emerald-600 hover:ring-2 hover:ring-emerald-700 hover:rounded-xl hover:text-neutral-100 transition ease-in-out delay-150"
+              className="w-full md:w-1/2 mt-5 cursor-pointer uppercase py-2.5 border-b-4 border-emerald-700 bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
             >
               send message
             </button>

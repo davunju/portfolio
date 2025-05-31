@@ -6,6 +6,7 @@ export default function Tools() {
       alt: "html logo",
       name: "HTML",
       description: "To structure a web page and its contents",
+      url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
     },
     {
       id: 2,
@@ -13,6 +14,7 @@ export default function Tools() {
       alt: "css logo",
       name: "CSS",
       description: "To style a web page layout",
+      url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
     },
     {
       id: 3,
@@ -20,6 +22,7 @@ export default function Tools() {
       alt: "js logo",
       name: "JavaScript",
       description: "To add interactivity to a web page",
+      url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
     },
     {
       id: 4,
@@ -27,6 +30,7 @@ export default function Tools() {
       alt: "react logo",
       name: "React",
       description: "As a JavaScript library for creating user interfaces",
+      url: "https://react.dev/",
     },
     {
       id: 5,
@@ -34,6 +38,7 @@ export default function Tools() {
       alt: "tailwind logo",
       name: "Tailwind CSS",
       description: "As a CSS framework for inline styling of elements",
+      url: "https://tailwindcss.com/",
     },
     {
       id: 6,
@@ -41,6 +46,7 @@ export default function Tools() {
       alt: "github logo",
       name: "Github",
       description: "For version control",
+      url: "https://github.com/",
     },
   ];
   return (
@@ -52,21 +58,25 @@ export default function Tools() {
         {tools.map((tool) => (
           <div
             key={tool.id}
-            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl p-4 flex items-start gap-3 md:gap-5"
+            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl p-4 flex items-center gap-3 md:gap-5"
           >
             <img
               src={tool.image}
               alt={tool.alt}
               className="size-10 md:size-12"
             />
-            <div>
+            <a
+              href={tool.url}
+              target="_blank"
+              className="dark:bg-slate-700 bg-slate-200 hover:bg-slate-300 h-full w-full px-5 py-3 rounded-r-xl dark:hover:bg-slate-900 transition-transform delay-300 ease-in-out cursor-pointer"
+            >
               <h1 className="font-semibold text-lg md:text-xl mb-1 md:mb-2">
                 {tool.name}
               </h1>
-              <p className="text-slate-600 dark:text-slate-400">
+              <p className="text-slate-700 dark:text-slate-300">
                 {tool.description}
               </p>
-            </div>
+            </a>
           </div>
         ))}
       </article>
