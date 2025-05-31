@@ -68,7 +68,7 @@ export default function Tools() {
             <a
               href={tool.url}
               target="_blank"
-              className="dark:bg-slate-700 bg-slate-200 hover:bg-slate-300 h-full w-full px-5 py-3 rounded-r-xl dark:hover:bg-slate-900 transition-transform delay-300 ease-in-out cursor-pointer"
+              className="dark:bg-slate-700 bg-slate-200 hover:bg-slate-300 h-full w-full px-5 py-3 rounded-r-xl dark:hover:bg-slate-900 transition delay-150 ease-in-out cursor-pointer"
             >
               <h1 className="font-semibold text-lg md:text-xl mb-1 md:mb-2">
                 {tool.name}
