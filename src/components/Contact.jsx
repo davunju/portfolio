@@ -72,7 +72,7 @@ export default function Contact() {
             </form>
             <button
               type="submit"
-              className="w-full md:w-1/2 mt-5 cursor-pointer uppercase py-2.5 border-b-4 border-emerald-700 bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
+              className="w-full md:w-1/2 mt-5 hover:bg-emerald-700 transition ease-in-out delay-150 cursor-pointer uppercase py-2.5 border-b-4 border-emerald-700 bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
             >
               send message
             </button>

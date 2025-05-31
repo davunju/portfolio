@@ -22,7 +22,7 @@ export default function Hero() {
           </p>
           <a
             href="#contact"
-            className="inline-block border-b-4 py-2.5 px-6 uppercase border-emerald-700 cursor-pointer font-semibold bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
+            className="inline-block border-b-4 py-2.5 px-6 uppercase border-emerald-700 hover:bg-emerald-700 transition ease-in-out delay-150 cursor-pointer font-semibold bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
           >
             contact me
           </a>
