@@ -60,7 +60,12 @@ export default function Navbar() {
         <h1 className="font-bold text-xl">davunju</h1>
         <section className="flex justify-center items-center gap-4">
           {icons.map((icon) => (
-            <a href={icon.link} key={icon.id} target="_blank">
+            <a
+              href={icon.link}
+              key={icon.id}
+              target="_blank"
+              className="ring-1 ring-inset p-2 rounded-2xl ring-slate-700 hover:bg-slate-300 transition delay-150 ease-in-out dark:hover:bg-slate-800"
+            >
               {darkMode ? (
                 <img src={icon.img} alt={icon.alt} className="size-5" />
               ) : (
@@ -70,7 +75,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-3 cursor-pointer"
+            className="p-2 cursor-pointer ring-1 ring-inset rounded-2xl ring-slate-700 hover:bg-slate-300 transition delay-150 ease-in-out dark:hover:bg-slate-800"
           >
             {darkMode ? (
               <img src="/icon-sun.svg" className="size-5" />
