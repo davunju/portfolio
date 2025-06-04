@@ -84,6 +84,13 @@ export default function Projects() {
           </div>
         ))}
       </article>
+      <a
+        href="https://www.frontendmentor.io/profile/davunju/solutions"
+        target="_blank"
+        className="inline-block mt-10 border-b-4 py-2.5 px-6 text-center capitalize border-emerald-700 hover:bg-emerald-700 transition ease-in-out delay-150 cursor-pointer font-semibold bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
+      >
+        More Projects
+      </a>
     </section>
   );
 }
