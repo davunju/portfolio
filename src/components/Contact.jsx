@@ -17,10 +17,10 @@ export default function Contact() {
     e.preventDefault();
     setStatus("Sending...");
     try {
-      await axios.post("https://contact-backend-l8ez.onrender.com", formData);
+      await axios.post("/contact", formData);
+      console.log(formData);
       setStatus("Message sent!");
       setFormData({ name: "", email: "", message: "" });
-      console.log(formData);
     } catch (error) {
       setStatus("Failed to send. Try again.");
       console.log(error);
