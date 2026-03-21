@@ -48,6 +48,14 @@ export default function Tools() {
       description: "For version control",
       url: "https://github.com/",
     },
+    {
+      id: 7,
+      image: "/zabbix.png",
+      alt: "zabbix logo",
+      name: Zabbix",
+      description: "For monitoring networks, servers and virtual machines parameters",
+      url: "https://www.zabbix.com/",
+    },
   ];
   return (
     <section className="w-full 2xl:max-w-7xl xl:max-w-6xl lg:max-w-5xl mx-auto my-16 px-5 text-slate-800 dark:text-white">
