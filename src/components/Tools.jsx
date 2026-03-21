@@ -34,6 +34,14 @@ export default function Tools() {
     },
     {
       id: 5,
+      image: "/nextjs.png",
+      alt: "next.js logo",
+      name: "Next JS",
+      Description: "Full-stack React framework for fast building web applications",
+      url: "https://nextjs.org/",
+    },
+    {
+      id: 6,
       image: "/tailwindcss.svg",
       alt: "tailwind logo",
       name: "Tailwind CSS",
@@ -41,7 +49,7 @@ export default function Tools() {
       url: "https://tailwindcss.com/",
     },
     {
-      id: 6,
+      id: 7,
       image: "/github-logo.svg",
       alt: "github logo",
       name: "Github",
@@ -49,7 +57,7 @@ export default function Tools() {
       url: "https://github.com/",
     },
     {
-      id: 7,
+      id: 8,
       image: "/zabbix.png",
       alt: "zabbix logo",
       name: "Zabbix",
@@ -57,7 +65,7 @@ export default function Tools() {
       url: "https://www.zabbix.com/",
     },
     {
-      id: 8,
+      id: 9,
       image: "/grafana.png",
       alt: "grafana logo",
       name: "Grafana",
