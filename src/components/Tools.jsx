@@ -56,6 +56,14 @@ export default function Tools() {
       description: "For monitoring networks, servers and virtual machines parameters",
       url: "https://www.zabbix.com/",
     },
+    {
+      id: 8,
+      image: "/grafana.png",
+      alt: "grafana logo",
+      name: "Grafana",
+      description: "For virtualization and analytics of metrics",
+      url: "https://grafana.com/",
+    },
   ];
   return (
     <section className="w-full 2xl:max-w-7xl xl:max-w-6xl lg:max-w-5xl mx-auto my-16 px-5 text-slate-800 dark:text-white">
