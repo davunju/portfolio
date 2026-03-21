@@ -37,7 +37,7 @@ export default function Tools() {
       image: "/nextjs.png",
       alt: "next.js logo",
       name: "Next JS",
-      Description: "Full-stack React framework for fast building web applications",
+      description: "Full-stack React framework for fast building web applications",
       url: "https://nextjs.org/",
     },
     {
