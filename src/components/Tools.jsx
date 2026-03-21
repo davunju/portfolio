@@ -97,7 +97,7 @@ export default function Tools() {
               <h1 className="font-semibold text-lg md:text-xl mb-1 md:mb-2">
                 {tool.name}
               </h1>
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
+              <p className="text-slate-700 dark:text-slate-300 text-base">
                 {tool.description}
               </p>
             </a>
