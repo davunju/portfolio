@@ -78,11 +78,11 @@ export default function Tools() {
       <h1 className="font-bold text-3xl md:text-5xl mb-10 text-center lg:text-start">
         Technologies
       </h1>
-      <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+      <article className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
         {tools.map((tool) => (
           <div
             key={tool.id}
-            className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl p-4 flex items-center gap-3 md:gap-5"
+            className="flex items-center gap-3 md:gap-5"
           >
             <img
               src={tool.image}
