@@ -78,7 +78,7 @@ export default function Tools() {
       <h1 className="font-bold text-3xl md:text-5xl mb-10 text-center lg:text-start">
         Technologies
       </h1>
-      <article className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+      <article className="dark:bg-slate-800 bg-[#EEF8F9] ring ring-inset ring-slate-300 dark:ring-slate-600 rounded-xl p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
         {tools.map((tool) => (
           <div
             key={tool.id}
@@ -92,7 +92,7 @@ export default function Tools() {
             <a
               href={tool.url}
               target="_blank"
-              className="dark:bg-slate-700 bg-slate-200 hover:bg-slate-300 h-full w-full px-5 py-3 rounded-r-xl dark:hover:bg-slate-900 transition delay-150 ease-in-out cursor-pointer"
+              className="dark:bg-slate-700 bg-slate-200 hover:bg-slate-300 h-full w-full px-5 py-3 rounded-xl dark:hover:bg-slate-900 transition delay-150 ease-in-out cursor-pointer"
             >
               <h1 className="font-semibold text-lg md:text-xl mb-1 md:mb-2">
                 {tool.name}
