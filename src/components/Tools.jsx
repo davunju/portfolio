@@ -52,7 +52,7 @@ export default function Tools() {
       id: 7,
       image: "/zabbix.png",
       alt: "zabbix logo",
-      name: Zabbix",
+      name: "Zabbix",
       description: "For monitoring networks, servers and virtual machines parameters",
       url: "https://www.zabbix.com/",
     },
