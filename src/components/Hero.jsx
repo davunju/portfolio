@@ -31,7 +31,7 @@ export default function Hero() {
           <img
             src="/david.jpg"
             alt="my image"
-            className="w-[560px] rounded-3xl lg:skew-2"
+            className="w-[560px] rounded-3xl lg:skew-2 contrast-150"
           />
         </div>
       </div>
