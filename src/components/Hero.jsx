@@ -1,38 +1,67 @@
 export default function Hero() {
   return (
-    <section className="w-full 2xl:max-w-7xl xl:max-w-6xl lg:max-w-5xl mx-auto my-8 lg:my-16 px-5 text-slate-800 dark:text-white">
-      <div className="flex flex-col-reverse items-center lg:flex-row lg:items-stretch justify-between">
-        <article className="max-[769px]:text-center md:text-center lg:text-start">
-          <div className="my-5 md:my-10">
-            <h1 className="font-bold max-[340px]:text-3xl md:text-6xl sm:text-5xl max-[450px]:text-4xl lg:text-7xl">
-              Nice to meet you!
-            </h1>
-            <h2 className="font-bold max-[340px]:text-3xl md:text-6xl sm:text-5xl max-[450px]:text-4xl lg:text-7xl">
-              I'm{" "}
-              <span className="border-b-4 border-emerald-700 text-transparent bg-gradient-to-r from-emerald-700 to-red-400 bg-clip-text">
-                David Enock
-              </span>
-              .
+    <section id="about" className="scroll-mt-28">
+      <header className="mb-10 text-center lg:mb-14 lg:text-left">
+        <p className="mb-3 text-sm font-medium text-bento-muted dark:text-bento-muted-dark">
+          Hello! I am
+        </p>
+        <h1 className="text-[2.75rem] font-bold leading-[1.02] tracking-tighter text-bento-ink dark:text-bento-ink-dark sm:text-6xl md:text-7xl">
+          <span className="bg-gradient-to-r from-zinc-900 via-violet-600 to-cyan-600 bg-clip-text text-transparent dark:from-white dark:via-violet-300 dark:to-cyan-300">
+            David Enock
+          </span>
+        </h1>
+        <p className="mt-4 text-xl font-semibold text-violet-700 dark:text-violet-300 sm:text-2xl">
+          Frontend developer
+        </p>
+      </header>
+
+      <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="order-2 space-y-6 lg:order-1 lg:col-span-7">
+          <div>
+            <h2 className="mb-3 text-lg font-semibold text-bento-ink dark:text-white">
+              Who am I?
             </h2>
+            <p className="text-base leading-relaxed text-bento-muted dark:text-bento-muted-dark md:text-[17px] md:leading-relaxed">
+              I&apos;m a developer based in Dodoma, Tanzania, who enjoys turning
+              ideas into fast, accessible interfaces. I learn continuously from
+              the community and care about details — motion, typography, and
+              clear UX — so products feel as good as they look.
+            </p>
           </div>
-          <p className="leading-relaxed w-full lg:w-7/12 font-medium justify-self-stretch mb-5 lg:mb-10">
-            Based in Dodoma, Tanzania, I'm a frontend web developer passionate
-            about building accessible web apps with great user interfaces and
-            user experiences.
-          </p>
-          <a
-            href="#contact"
-            className="inline-block border-b-4 py-2.5 px-6 uppercase border-emerald-700 hover:bg-emerald-700 transition ease-in-out delay-150 cursor-pointer font-semibold bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
-          >
-            contact me
-          </a>
-        </article>
-        <div>
-          <img
-            src="/david.jpg"
-            alt="my image"
-            className="w-[560px] rounded-3xl lg:skew-2"
-          />
+
+          <blockquote className="border-l-2 border-cyan-500 py-0.5 pl-5 text-[15px] italic leading-relaxed text-bento-ink/90 dark:border-cyan-400 dark:text-zinc-300 md:text-base">
+            I really like building software people actually enjoy using.
+          </blockquote>
+
+          <div className="flex flex-wrap justify-center gap-3 pt-1 lg:justify-start">
+            <a href="#contact" className="btn-primary">
+              Let&apos;s talk
+            </a>
+            <a
+              href="https://github.com/davunju"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-secondary"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div className="order-1 flex justify-center lg:order-2 lg:col-span-5 lg:justify-end">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -inset-3 rounded-full bg-gradient-to-tr from-violet-500 via-fuchsia-500 to-cyan-400 opacity-35 blur-2xl dark:opacity-25"
+            />
+            <div className="relative rounded-full bg-gradient-to-br from-violet-500/30 via-transparent to-cyan-400/25 p-[3px] shadow-xl shadow-violet-500/15 dark:shadow-cyan-500/10">
+              <img
+                src="/david.jpg"
+                alt="David Enock"
+                className="size-40 rounded-full object-cover ring-[3px] ring-white dark:ring-slate-950 sm:size-48 md:size-52"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

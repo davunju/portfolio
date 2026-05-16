@@ -1,7 +1,11 @@
 import { useState } from "react";
-import axios from "axios";
+import SectionHeading from "./SectionHeading";
+
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
 export default function Contact() {
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,70 +19,141 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    if (!accessKey?.trim()) {
+      setStatus(
+        "Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example)."
+      );
+      return;
+    }
+
+    setStatus("Sending…");
+
     try {
-      await axios.post("/contact", formData);
-      console.log(formData);
-      setStatus("Message sent!");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      setStatus("Failed to send. Try again.");
-      console.log(error);
+      const response = await fetch(WEB3FORMS_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: "Portfolio contact form",
+          from_name: "Portfolio site",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("Thanks — your message is on its way.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus(data.message || "Something went wrong. Try again.");
+      }
+    } catch {
+      setStatus("Network error. Please try again.");
     }
   };
+
   return (
-    <section id="contact" className="bg-slate-800 py-16">
-      <div className="w-full 2xl:max-w-7xl xl:max-w-6xl lg:max-w-5xl mx-auto px-5 text-white">
-        <section className="flex flex-col md:flex-row gap-10 lg:gap-20 items-start">
-          <article>
-            <h1 className="font-bold text-3xl md:text-5xl mb-8">Contact</h1>
-            <p className="w-full md:w-9/12">
-              I would love to hear about your project and how I could help.
-              Please fill in the form, and I'll get back to you as soon as
-              possible.
+    <section
+      id="contact"
+      className="bento-card bento-card-padding scroll-mt-28 pb-6 md:pb-8"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-0 size-56 rounded-full bg-gradient-to-tl from-violet-500/20 to-transparent blur-3xl dark:from-cyan-500/15"
+      />
+
+      <SectionHeading kicker="04 — Contact" title="Get in touch" />
+
+      <div className="relative mt-2 grid gap-8 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-5">
+          <p className="text-sm leading-relaxed text-bento-muted dark:text-bento-muted-dark md:text-[15px]">
+            Have a project or role in mind? Send a message — I&apos;ll respond as
+            soon as I can.
+          </p>
+          {!accessKey?.trim() ? (
+            <p className="mt-5 rounded-xl border border-dashed border-violet-400/35 bg-violet-500/[0.06] px-3.5 py-3 text-sm leading-relaxed text-violet-800 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:text-cyan-200">
+              Set{" "}
+              <code className="rounded-md bg-white/70 px-1.5 py-0.5 text-xs font-medium dark:bg-slate-950/60">
+                VITE_WEB3FORMS_ACCESS_KEY
+              </code>{" "}
+              from{" "}
+              <a
+                href="https://web3forms.com"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold underline decoration-violet-400/50 underline-offset-2 hover:decoration-violet-600 dark:decoration-cyan-400/60"
+              >
+                web3forms.com
+              </a>
+              .
             </p>
-          </article>
-          <div>
-            <form onSubmit={handleSubmit} className="w-full space-y-5">
+          ) : null}
+        </div>
+
+        <div className="lg:col-span-7">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 rounded-xl border border-zinc-200/80 bg-white/55 p-5 shadow-inner shadow-zinc-950/[0.02] dark:border-white/[0.07] dark:bg-white/[0.04] md:p-6"
+          >
+            <label className="grid gap-1.5 text-sm font-medium text-bento-ink dark:text-bento-ink-dark">
+              Name
               <input
                 type="text"
                 name="name"
-                id="fullname"
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="NAME"
-                className="w-full border-b-2 border-slate-600 p-3"
+                placeholder="Your name"
+                className="bento-input"
               />
+            </label>
+            <label className="grid gap-1.5 text-sm font-medium text-bento-ink dark:text-bento-ink-dark">
+              Email
               <input
                 type="email"
                 name="email"
-                id="mail"
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="EMAIL"
-                className="w-full border-b-2 border-slate-600 p-3"
+                placeholder="you@example.com"
+                className="bento-input"
               />
+            </label>
+            <label className="grid gap-1.5 text-sm font-medium text-bento-ink dark:text-bento-ink-dark">
+              Message
               <textarea
                 name="message"
-                id="message"
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="MESSAGE"
-                className="w-full border-b-2 border-slate-600 p-3"
-              ></textarea>
-            </form>
-            <button
-              type="submit"
-              className="w-full md:w-1/2 mt-5 hover:bg-emerald-700 transition ease-in-out delay-150 cursor-pointer uppercase py-2.5 border-b-4 border-emerald-700 bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
-            >
-              send message
+                placeholder="What would you like to collaborate on?"
+                className="bento-input min-h-[130px] resize-y"
+              />
+            </label>
+
+            <button type="submit" className="btn-primary mt-1 w-full sm:w-auto">
+              Send message
             </button>
-            <p>{status}</p>
-          </div>
-        </section>
+
+            {status ? (
+              <p
+                role="status"
+                className="text-sm text-bento-muted dark:text-bento-muted-dark"
+              >
+                {status}
+              </p>
+            ) : null}
+          </form>
+        </div>
       </div>
     </section>
   );
