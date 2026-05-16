@@ -23,14 +23,14 @@ export default function Layout() {
   }, [location.pathname, location.hash]);
 
   return (
-    <>
+    <div className="flex min-h-dvh flex-col overflow-x-clip">
       <Navbar />
-      <div className="px-4 pt-20 pb-20 md:px-6 md:pt-24 md:pb-24">
+      <main className="flex-1 px-4 pt-20 pb-20 md:px-6 md:pt-24 md:pb-24">
         <div className="mx-auto w-full max-w-5xl">
           <Outlet />
         </div>
-      </div>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -93,7 +93,7 @@ const tools = [
 
 export default function Tools() {
   return (
-    <section id="technologies" className="scroll-mt-28">
+    <section id="technologies" className="scroll-mt-28 overflow-hidden">
       <SectionHeading
         kicker="02 — Stack"
         title="Technologies I have worked with"
@@ -155,7 +155,7 @@ export default function Tools() {
               </span>
 
               <span
-                className="pointer-events-none absolute inset-x-0 bottom-0 z-20 translate-y-full px-2 pb-2 pt-6 text-center text-[11px] font-semibold leading-tight tracking-tight text-zinc-800 opacity-0 transition duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 dark:text-zinc-100"
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-2 pb-2 pt-6 text-center text-[11px] font-semibold leading-tight tracking-tight text-zinc-800 opacity-0 transition duration-300 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 dark:text-zinc-100"
                 aria-hidden
               >
                 <span className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/75 to-transparent dark:from-zinc-950/95 dark:via-zinc-950/70" />

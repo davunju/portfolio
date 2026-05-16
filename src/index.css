@@ -31,10 +31,11 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
-    @apply relative bg-bento-canvas text-bento-ink antialiased transition-colors duration-300 dark:bg-bento-canvas-dark dark:text-bento-ink-dark;
+    @apply relative overflow-x-clip bg-bento-canvas text-bento-ink antialiased transition-colors duration-300 dark:bg-bento-canvas-dark dark:text-bento-ink-dark;
     background-image:
       radial-gradient(
         ellipse 120% 80% at 50% -30%,

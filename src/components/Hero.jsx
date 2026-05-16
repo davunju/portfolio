@@ -4,7 +4,7 @@ import resumePdf from "../assets/Curriculum_Vitae.pdf";
 
 export default function Hero() {
   return (
-    <section id="about" className="scroll-mt-28">
+    <section id="about" className="scroll-mt-28 overflow-hidden">
       <header className="mb-10 text-center lg:mb-14 lg:text-left">
         <p className="mb-3 text-sm font-medium text-bento-muted dark:text-bento-muted-dark">
           Hello! I am
