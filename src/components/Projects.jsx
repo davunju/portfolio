@@ -45,8 +45,22 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="scroll-mt-28">
-      <SectionHeading kicker="03 — Work" title="Projects" />
+    <section className="scroll-mt-28">
+      <header className="mb-10 md:mb-14">
+        <SectionHeading kicker="03 — Work" title="Projects" />
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-bento-muted dark:text-bento-muted-dark md:text-[15px]">
+          A selection of front-end work with live demos. More challenges on{" "}
+          <a
+            href="https://www.frontendmentor.io/profile/davunju/solutions"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-violet-600 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-700 dark:text-cyan-300 dark:decoration-cyan-400/50"
+          >
+            Frontend Mentor
+          </a>
+          .
+        </p>
+      </header>
 
       <div className="space-y-6">
         {projects.map((project) => (

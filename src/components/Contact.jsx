@@ -59,10 +59,7 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="bento-card bento-card-padding scroll-mt-28 pb-6 md:pb-8"
-    >
+    <section className="relative bento-card bento-card-padding scroll-mt-28 pb-6 md:pb-8">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-24 bottom-0 size-56 rounded-full bg-gradient-to-tl from-violet-500/20 to-transparent blur-3xl dark:from-cyan-500/15"

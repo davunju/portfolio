@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section id="about" className="scroll-mt-28">
@@ -28,24 +30,40 @@ export default function Hero() {
               clear UX — so products feel as good as they look.
             </p>
           </div>
-          <p className="leading-relaxed w-full lg:w-7/12 font-medium justify-self-stretch mb-5 lg:mb-10">
-            Based in Dodoma, Tanzania, I'm a frontend web developer passionate
-            about building accessible web apps with great user interfaces and
-            user experiences.
-          </p>
-          <a
-            href="#contact"
-            className="inline-block border-b-4 py-2.5 px-6 uppercase border-emerald-700 hover:bg-emerald-700 transition ease-in-out delay-150 cursor-pointer font-semibold bg-emerald-600 ring-2 ring-emerald-700 rounded-xl text-neutral-100"
-          >
-            contact me
-          </a>
-        </article>
-        <div>
-          <img
-            src="/david.jpg"
-            alt="my image"
-            className="w-[560px] rounded-3xl lg:skew-2"
-          />
+
+          <blockquote className="border-l-2 border-cyan-500 py-0.5 pl-5 text-[15px] italic leading-relaxed text-bento-ink/90 dark:border-cyan-400 dark:text-zinc-300 md:text-base">
+            I really like building software people actually enjoy using.
+          </blockquote>
+
+          <div className="flex flex-wrap justify-center gap-3 pt-1 lg:justify-start">
+            <Link to="/contact" className="btn-primary">
+              Let&apos;s talk
+            </Link>
+            <a
+              href="https://github.com/davunju"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-secondary"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div className="order-1 flex justify-center lg:order-2 lg:col-span-5 lg:justify-end">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -inset-3 rounded-full bg-gradient-to-tr from-violet-500 via-fuchsia-500 to-cyan-400 opacity-35 blur-2xl dark:opacity-25"
+            />
+            <div className="relative rounded-full bg-gradient-to-br from-violet-500/30 via-transparent to-cyan-400/25 p-[3px] shadow-xl shadow-violet-500/15 dark:shadow-cyan-500/10">
+              <img
+                src="/david.jpg"
+                alt="David Enock"
+                className="size-40 rounded-full object-cover ring-[3px] ring-white dark:ring-slate-950 sm:size-48 md:size-52"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

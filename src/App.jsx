@@ -1,21 +1,19 @@
-import Navbar from "./components/Navbar";
-import Tools from "./components/Tools";
-import Projects from "./components/Projects";
-import Hero from "./components/Hero";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Home from "./pages/Home";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <main className="relative mx-auto max-w-5xl space-y-20 px-4 pb-20 pt-6 md:space-y-28 md:px-6 md:pb-24 md:pt-8">
-        <Hero />
-        <Tools />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
