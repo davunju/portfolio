@@ -1,5 +1,7 @@
 import { useState } from "react";
 import SectionHeading from "./SectionHeading";
+import AvailabilityLine from "./AvailabilityLine";
+import resumePdf from "../assets/Curriculum_Vitae.pdf";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
@@ -69,10 +71,24 @@ export default function Contact() {
 
       <div className="relative mt-2 grid gap-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
+          <AvailabilityLine className="mb-5" />
           <p className="text-sm leading-relaxed text-bento-muted dark:text-bento-muted-dark md:text-[15px]">
-            Have a project or role in mind? Send a message — I&apos;ll respond as
-            soon as I can.
+            Have a project or role in mind?{" "}
+            <a
+              href="#contact-form"
+              className="font-medium text-violet-600 underline decoration-violet-400/40 underline-offset-2 hover:text-violet-700 dark:text-cyan-300 dark:decoration-cyan-400/50 dark:hover:text-cyan-200"
+            >
+              Send a message
+            </a>{" "}
+            — I&apos;ll respond as soon as I can.
           </p>
+          <a
+            href={resumePdf}
+            download="David_Enock_CV.pdf"
+            className="btn-secondary mt-5 inline-flex"
+          >
+            Download CV
+          </a>
           {!accessKey?.trim() ? (
             <p className="mt-5 rounded-xl border border-dashed border-violet-400/35 bg-violet-500/[0.06] px-3.5 py-3 text-sm leading-relaxed text-violet-800 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:text-cyan-200">
               Set{" "}
@@ -95,8 +111,9 @@ export default function Contact() {
 
         <div className="lg:col-span-7">
           <form
+            id="contact-form"
             onSubmit={handleSubmit}
-            className="space-y-4 rounded-xl border border-zinc-200/80 bg-white/55 p-5 shadow-inner shadow-zinc-950/[0.02] dark:border-white/[0.07] dark:bg-white/[0.04] md:p-6"
+            className="scroll-mt-32 space-y-4 rounded-xl border border-zinc-200/80 bg-white/55 p-5 shadow-inner shadow-zinc-950/[0.02] dark:border-white/[0.07] dark:bg-white/[0.04] md:p-6"
           >
             <label className="grid gap-1.5 text-sm font-medium text-bento-ink dark:text-bento-ink-dark">
               Name

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import AvailabilityLine from "./AvailabilityLine";
+import resumePdf from "../assets/Curriculum_Vitae.pdf";
 
 export default function Hero() {
   return (
@@ -15,6 +17,9 @@ export default function Hero() {
         <p className="mt-4 text-xl font-semibold text-violet-700 dark:text-violet-300 sm:text-2xl">
           Frontend developer
         </p>
+        <div className="mt-5 flex justify-center lg:justify-start">
+          <AvailabilityLine />
+        </div>
       </header>
 
       <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
@@ -36,9 +41,16 @@ export default function Hero() {
           </blockquote>
 
           <div className="flex flex-wrap justify-center gap-3 pt-1 lg:justify-start">
-            <Link to="/contact" className="btn-primary">
+            <Link to="/contact#contact-form" className="btn-primary">
               Let&apos;s talk
             </Link>
+            <a
+              href={resumePdf}
+              download="David_Enock_CV.pdf"
+              className="btn-secondary"
+            >
+              Download CV
+            </a>
             <a
               href="https://github.com/davunju"
               target="_blank"
