@@ -1,85 +1,104 @@
 # David Enock — Portfolio
 
-React + Vite portfolio with Web3Forms contact.
+Personal portfolio site for **David Enock**, a frontend developer based in Dodoma, Tanzania. The site presents an introduction, tech stack, selected projects, and a contact form — built as a fast, static React app with no custom backend.
+
+## Live site
+
+Deploy via [Vercel](https://vercel.com) (see [Deploy](#deploy-to-vercel) below). After deployment, your production URL will be shown in the Vercel dashboard.
+
+## What’s on the site
+
+| Section | Description |
+|---------|-------------|
+| **About** | Intro, “Who am I?” bio, and profile photo |
+| **Technologies** | Stack as interactive pills (HTML, CSS, JS, React, Next.js, Tailwind, GitHub, Zabbix, Grafana) |
+| **Projects** | Featured work with live previews and links |
+| **Contact** | Form powered by [Web3Forms](https://web3forms.com) (email delivery without a server) |
+
+**UX details:** sticky navigation with anchor links, mobile menu, light/dark theme (saved in `localStorage`), and a violet/cyan visual style with Inter typography.
+
+## Tech stack
+
+- **React 19** + **Vite 6**
+- **Tailwind CSS 4** (`@tailwindcss/vite`)
+- **Web3Forms** for contact submissions
+- **ESLint** for linting
+
+## Project structure
+
+```
+src/
+├── App.jsx              # Page layout and section order
+├── index.css            # Theme tokens, utilities, global styles
+├── main.jsx
+└── components/
+    ├── Navbar.jsx       # Nav, theme toggle, mobile menu
+    ├── Hero.jsx         # About / intro
+    ├── Tools.jsx        # Technology pills
+    ├── Projects.jsx     # Project cards
+    ├── Contact.jsx      # Web3Forms contact form
+    ├── Footer.jsx
+    └── SectionHeading.jsx
+```
+
+Static assets (images, logos) live in `public/`.
 
 ## Local development
+
+**Requirements:** Node.js 18+ and npm.
 
 ```bash
 npm install
 cp .env.example .env
 ```
 
-Add your Web3Forms access key to `.env`:
+Add your Web3Forms access key to `.env` (free at [web3forms.com](https://web3forms.com)):
 
 ```env
 VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
 ```
 
-Get a key at [web3forms.com](https://web3forms.com) (free).
-
 ```bash
-npm run dev
+npm run dev      # http://localhost:5173
+npm run build    # output in dist/
+npm run preview  # preview production build
+npm run lint
 ```
+
+Without `VITE_WEB3FORMS_ACCESS_KEY`, the contact section still renders but shows a setup notice instead of sending mail.
 
 ## Deploy to Vercel
 
-### 1. Connect the repo
+1. Push the repo to GitHub and import it in Vercel (framework: **Vite**; settings are also in `vercel.json`).
+2. Add an environment variable:
 
-1. Push this project to GitHub.
-2. In [Vercel](https://vercel.com), **Add New Project** and import the repo.
-3. Vercel should detect **Vite** automatically (`build`: `npm run build`, `output`: `dist`).  
-   `vercel.json` in the repo matches those settings.
+   | Key | Value |
+   |-----|--------|
+   | `VITE_WEB3FORMS_ACCESS_KEY` | Your Web3Forms access key |
 
-### 2. Set the environment variable
+   In the dashboard: **Project → Settings → Environment Variables**. Enable **Production**, **Preview**, and **Development**.
 
-The contact form needs this variable **at build time** (Vite only exposes `VITE_*` vars when `npm run build` runs).
+   CLI alternative: `vercel env add VITE_WEB3FORMS_ACCESS_KEY` (after `vercel link`).
 
-| Name | Value |
-|------|--------|
-| `VITE_WEB3FORMS_ACCESS_KEY` | Your Web3Forms access key |
+3. **Redeploy** after adding or changing the variable — Vite embeds `VITE_*` values at build time.
+4. Test the contact form on the live URL and confirm email in your Web3Forms inbox.
 
-**In the dashboard**
+## Environment variables
 
-1. Open your project → **Settings** → **Environment Variables**.
-2. **Key:** `VITE_WEB3FORMS_ACCESS_KEY`
-3. **Value:** paste the same key you use in local `.env`.
-4. Enable **Production**, **Preview**, and **Development** (recommended).
-5. Click **Save**.
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `VITE_WEB3FORMS_ACCESS_KEY` | Yes (for contact) | Web3Forms access key; used client-side in `Contact.jsx` |
 
-**With Vercel CLI** (after `npm i -g vercel` and `vercel link`):
+Never commit `.env`. Keep `.env.example` as a template with an empty value only.
 
-```bash
-vercel env add VITE_WEB3FORMS_ACCESS_KEY
-```
+## Featured projects (live)
 
-Paste the key when prompted, then select Production, Preview, and Development.
+- [REST Countries API](https://davunju-rest-countries.vercel.app/)
+- [E-commerce product page](https://davunju-ecommerce-product-page.vercel.app/)
+- [Age calculator](https://davunju.github.io/age-calculator/)
+- [Advice generator](https://davunju.github.io/random-advices/)
+- [More on Frontend Mentor](https://www.frontendmentor.io/profile/davunju/solutions)
 
-### 3. Redeploy
+## Author
 
-After adding or changing env vars, trigger a new deployment:
-
-- **Deployments** → latest deployment → **⋯** → **Redeploy**, or  
-- Push a new commit to your default branch.
-
-Without a redeploy, production builds will not include the key and the contact form will show the setup notice.
-
-### 4. Verify
-
-1. Open the live site and scroll to **Contact**.
-2. Submit a test message.
-3. Check the inbox tied to your Web3Forms access key.
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Dev server |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | ESLint |
-
-## Security notes
-
-- Do **not** commit `.env` or put your access key in the repo.
-- Web3Forms access keys are intended to be used in the browser; still avoid committing them in `.env.example` or source code.
-- If a key was ever committed, create a new key at [web3forms.com](https://web3forms.com) and update Vercel + local `.env`.
+**David Enock** — [GitHub](https://github.com/davunju) · [LinkedIn](https://www.linkedin.com/in/david-enock/) · [Frontend Mentor](https://www.frontendmentor.io/profile/davunju)
