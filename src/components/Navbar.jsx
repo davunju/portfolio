@@ -1,36 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
-const icons = [
-  {
-    id: 1,
-    image: "/github-mark.svg",
-    img: "/github-mark-white.png",
-    alt: "GitHub",
-    link: "https://github.com/davunju",
-  },
-  {
-    id: 2,
-    image: "/frontendmentor-logo.svg",
-    img: "/frontendmentorwhite.svg",
-    alt: "Frontend Mentor",
-    link: "https://www.frontendmentor.io/profile/davunju",
-  },
-  {
-    id: 3,
-    image: "/linkedin.svg",
-    img: "/linkedinwhite.svg",
-    alt: "LinkedIn",
-    link: "https://www.linkedin.com/in/david-enock/",
-  },
-  {
-    id: 4,
-    image: "/freecodecamp.svg",
-    img: "/freecodecampwhite.svg",
-    alt: "freeCodeCamp",
-    link: "https://www.freecodecamp.org/DavidEnock",
-  },
-];
+import { NavbarSocialLinks } from "./SocialLinks";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", pathname: "/", hash: "#about" },
@@ -77,29 +48,8 @@ function mobileNavLinkClassName(isActive) {
 }
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      root.classList.add("dark");
-    }
-  }, []);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -151,40 +101,9 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-0.5">
-            <div className="hidden items-center gap-0.5 sm:flex">
-              {icons.map((icon) => (
-                <a
-                  href={icon.link}
-                  key={icon.id}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-lg p-2 text-bento-muted transition-colors hover:bg-black/[0.05] hover:text-violet-600 dark:text-bento-muted-dark dark:hover:bg-white/[0.06] dark:hover:text-cyan-300"
-                  aria-label={icon.alt}
-                >
-                  <img
-                    src={darkMode ? icon.img : icon.image}
-                    alt=""
-                    className="size-[1.125rem] opacity-90"
-                    aria-hidden
-                  />
-                </a>
-              ))}
-            </div>
+            <NavbarSocialLinks />
 
-            <button
-              type="button"
-              onClick={() => setDarkMode(!darkMode)}
-              className="rounded-lg p-2 text-bento-muted transition-colors hover:bg-black/[0.05] hover:text-violet-600 dark:text-bento-muted-dark dark:hover:bg-white/[0.06] dark:hover:text-cyan-300"
-              aria-label={
-                darkMode ? "Switch to light mode" : "Switch to dark mode"
-              }
-            >
-              {darkMode ? (
-                <img src="/icon-sun.svg" alt="" className="size-[1.125rem]" />
-              ) : (
-                <img src="/icon-moon.svg" alt="" className="size-[1.125rem]" />
-              )}
-            </button>
+            <ThemeToggle />
 
             <button
               type="button"
@@ -244,26 +163,10 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="mt-1 flex items-center justify-center gap-1 border-t border-zinc-200/80 px-2 py-3 dark:border-white/[0.08] sm:hidden">
-                {icons.map((icon) => (
-                  <a
-                    href={icon.link}
-                    key={icon.id}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={closeMenu}
-                    className="rounded-lg p-2.5 text-bento-muted transition-colors hover:bg-black/[0.05] hover:text-violet-600 dark:text-bento-muted-dark dark:hover:bg-white/[0.06] dark:hover:text-cyan-300"
-                    aria-label={icon.alt}
-                  >
-                    <img
-                      src={darkMode ? icon.img : icon.image}
-                      alt=""
-                      className="size-[1.125rem] opacity-90"
-                      aria-hidden
-                    />
-                  </a>
-                ))}
-              </div>
+              <NavbarSocialLinks
+                onNavigate={closeMenu}
+                className="mt-1 flex items-center justify-center gap-1 border-t border-zinc-200/80 px-2 py-3 dark:border-white/[0.08] sm:hidden"
+              />
             </div>
           </>
         ) : null}
