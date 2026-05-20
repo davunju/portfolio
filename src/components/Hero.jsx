@@ -46,10 +46,11 @@ export default function Hero() {
             </Link>
             <a
               href={resumePdf}
-              download="David_Enock_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary"
             >
-              Download CV
+              View CV
             </a>
             <a
               href="https://github.com/davunju"

@@ -84,10 +84,11 @@ export default function Contact() {
           </p>
           <a
             href={resumePdf}
-            download="David_Enock_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-secondary mt-5 inline-flex"
           >
-            Download CV
+            View CV
           </a>
           {!accessKey?.trim() ? (
             <p className="mt-5 rounded-xl border border-dashed border-violet-400/35 bg-violet-500/[0.06] px-3.5 py-3 text-sm leading-relaxed text-violet-800 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:text-cyan-200">
