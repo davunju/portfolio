@@ -74,9 +74,21 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-3 z-50 px-4 md:px-6">
+    <header
+      className={[
+        "z-50 px-4 md:px-6",
+        menuOpen
+          ? "max-md:fixed max-md:inset-x-0 max-md:top-0 max-md:pt-3"
+          : "sticky top-3",
+      ].join(" ")}
+    >
       <div className="relative mx-auto max-w-5xl">
-        <nav className="flex items-center justify-between gap-3 rounded-2xl border border-zinc-200/80 bg-white/75 px-4 py-2.5 shadow-lg shadow-zinc-950/[0.04] backdrop-blur-2xl dark:border-white/[0.08] dark:bg-slate-950/70 dark:shadow-black/50 md:px-5">
+        <nav
+          className={[
+            "relative flex items-center justify-between gap-3 rounded-2xl border border-zinc-200/80 bg-white/75 px-4 py-2.5 shadow-lg shadow-zinc-950/[0.04] backdrop-blur-2xl dark:border-white/[0.08] dark:bg-slate-950/70 dark:shadow-black/50 md:px-5",
+            menuOpen && "z-50",
+          ].join(" ")}
+        >
           <Link
             to="/"
             onClick={closeMenu}
@@ -139,13 +151,13 @@ export default function Navbar() {
           <>
             <button
               type="button"
-              className="fixed inset-0 top-16 z-40 bg-zinc-950/20 backdrop-blur-[2px] md:hidden dark:bg-black/40"
+              className="fixed inset-0 z-[45] bg-zinc-950/20 backdrop-blur-[2px] md:hidden dark:bg-black/40"
               aria-label="Close menu"
               onClick={closeMenu}
             />
             <div
               id="mobile-nav"
-              className="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-50 overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/95 shadow-xl shadow-zinc-950/10 backdrop-blur-2xl md:hidden dark:border-white/[0.08] dark:bg-slate-950/95 dark:shadow-black/50"
+              className="max-md:fixed max-md:inset-x-4 max-md:top-[4.75rem] max-md:z-[60] max-md:max-h-[calc(100dvh-5.5rem)] max-md:overflow-y-auto absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[60] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/95 shadow-xl shadow-zinc-950/10 backdrop-blur-2xl md:hidden dark:border-white/[0.08] dark:bg-slate-950/95 dark:shadow-black/50"
             >
               <div className="flex flex-col p-2">
                 {navLinks.map((link) => {
