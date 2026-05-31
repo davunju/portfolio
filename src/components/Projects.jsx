@@ -3,6 +3,15 @@ import SectionHeading from "./SectionHeading";
 export default function Projects() {
   const projects = [
     {
+      id: 0,
+      image: "/wildessentialsafaris.avif",
+      alt: "Wild Essential Safaris",
+      name: "Wild Essential Safaris Website",
+      url: "https://wildessentialsafaris.com/",
+      description: "Tourism agency website with fully functionalities such as booking, staff administrations for CRUD actions.",
+      tags: ["React", "Tailwind", "Framer Motion"],
+    },
+    {
       id: 1,
       image: "/restapicountries.png",
       alt: "REST Countries app preview",
